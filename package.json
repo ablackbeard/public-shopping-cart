@@ -1,0 +1,20 @@
+{
+	"name": "bnm-server",
+	"version": "1.0.0",
+	"private": true,
+	"license": "GPL-3.0",
+	"scripts": {},
+	"dependencies": {
+		"@prisma/client": "^6.7.0",
+		"cors": "^2.8.5",
+		"express": "^4.16.4",
+		"express-openapi-validator": "^4.10.5",
+		"js-yaml": "^4.1.0"
+	},
+	"devDependencies": {
+		"prisma": "^6.7.0"
+	},
+	"prisma": {
+		"schema": "schema.prisma"
+	}
+}

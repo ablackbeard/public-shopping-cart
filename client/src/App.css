@@ -1,0 +1,46 @@
+#root {
+  /*height: 100%;*/
+}
+
+body {
+  background-color: #deeaef;
+}
+
+#page-container {
+  padding: 12px;
+  padding-top: 0;
+}
+
+nav {
+  display: inline-block;
+  background: linear-gradient(#8b8b8b, #b3b3b3);
+  top: 0px;
+  margin: 12px;
+  padding: 12px 20px 12px 20px;
+  border-radius: 4px;
+}
+
+.navbar-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.navbar-list a {
+  color: white;
+  border-radius: 2px;
+  padding: 4px;
+  transition-property: background-color;
+  transition-duration: 0.2s;
+}
+
+.navbar-list a:hover {
+  background-color: rgb(113, 115, 230);
+}
+
+.nav-sep {
+  width: 1px;
+  background-color: #d3d3d3;
+}

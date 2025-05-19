@@ -1,0 +1,58 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Guest {
+  ID          String    @unique
+  Residency   String?   // OC, C, R
+  GradYear    Int       // 2025
+  Grad        String    // UG
+  YearIssued  Int       // 2021
+  BirthDate   String    // 2002-12-05
+  Employed    Boolean   // false
+  CardYear    Int       // 2025
+}
+
+model Visit {
+  BNMID       String    @unique
+  Date        DateTime
+}
+
+model Item {
+  UPC         String    @unique
+  Name        String
+  Quantity    Int
+
+  // One-to-many relation
+  //Report            Report? @relation(fields: [reportReportID], references: [ReportID])
+  //reportReportID    Int?
+  //Entry             Entry?  @relation(fields: [entryEntryID], references: [EntryID])
+  //entryEntryID      Int?
+}
+
+model Report {
+  ReportID    Int       @id @default(autoincrement())
+  //Data        Item[]
+}
+
+model Entry {
+  EntryID     Int       @id @default(autoincrement())
+  //Entries     Item[]
+  SessionID   String
+}
+
+// One-to-many: One entry can have many items
+model EntryItem {
+  EntryID     Int
+  ItemUPC     String
+  @@unique([EntryID, ItemUPC])
+}

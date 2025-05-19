@@ -1,0 +1,39 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
+{
+    "name": "Node.js",
+    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+    "overrideCommand": true,
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    },
+    // Add the IDs of extensions you want installed when the container is created.
+
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "files.insertFinalNewline": true,
+                "files.trimFinalNewlines": true,
+                "editor.defaultFormatter": "esbenp.prettier-vscode",
+                "[javascript]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode"
+                }
+            },
+
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "humao.rest-client",
+                "streetsidesoftware.code-spell-checker",
+                "yzhang.markdown-all-in-one",
+                "DavidAnson.vscode-markdownlint",
+                "codezombiech.gitignore",
+                "hashhar.gitattributes",
+                "timonwong.shellcheck",
+                "esbenp.prettier-vscode",
+                "Vue.volar",
+                "arjun.swagger-viewer"
+            ]
+        }
+    }
+}
